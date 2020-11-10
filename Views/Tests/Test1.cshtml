@@ -1,0 +1,223 @@
+﻿<div id="left" class="position">
+    <h2>Нужна помощь с тестами? Обратитесь к обучающим материалам.</h2>
+        <!-- Кнопки для открытия модальных окон -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studyMaterialsHistoryOfC">Как появился язык программирования С++</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studyMaterialsLoops">Циклы</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studyMaterialsSwitch">Оператор множественного выбора switch</button>
+        <br>
+        <br>
+        <br>
+    <form onSubmit="countScore()">
+        <h3>Основы С++, история возникновения, циклы, switch</h3>
+        <br>
+        <p><b>Выберите цикл с постусловием</b></p>
+        <p><input type="radio" name="q1" value="0" checked> for</p>
+        <p><input type="radio" name="q1" value="0"> while</p>
+        <p><input type="radio" name="q1" value="1" > do while</p>
+
+        <p><b>Какой служебный знак ставится после оператора case?</b></p>
+        <p><input type="radio" name="q2" value="0" checked> ;</p>
+        <p><input type="radio" name="q2" value="1" > :</p>
+        <p><input type="radio" name="q2" value="0"> .</p>
+        <p><input type="radio" name="q2" value="0"> -</p>
+
+        <p><b>До каких пор будут выполняться операторы в теле цикла while (x < 100)?</b></p>
+        <p><input type="radio" name="q3" value="0" checked> Пока х меньше или равен стам</p>
+        <p><input type="radio" name="q3" value="1" > Пока х равен стам</p>
+        <p><input type="radio" name="q3" value="0"> Пока х больше ста</p>
+        <p><input type="radio" name="q3" value="0"> Пока х строго меньше ста</p>
+
+        <p><b>Тело любого цикла выполняется до тех пор, пока его условие...</b></p>
+        <p><input type="radio" name="q4" value="0" checked> Истинно</p>
+        <p><input type="radio" name="q4" value="0" > Ложно</p>
+        <p><input type="radio" name="q4" value="1"> У цикла нет условия</p>
+
+        <p><b>Какой из следующих операторов - оператор сравнения двух переменных?</b></p>
+        <p><input type="radio" name="q5" value="0" checked> :=</p>
+        <p><input type="radio" name="q5" value="0" > ==</p>
+        <p><input type="radio" name="q5" value="1"> =</p>
+
+        <p><b>Чтобы подключить заголовочный файл в программу на С++, например файл iostream, необходимо написать:</b></p>
+        <p><input type="radio" name="q6" value="0" checked> include #iostream,h;</p>
+        <p><input type="radio" name="q6" value="0" > include (iostreamh)т</p>
+        <p><input type="radio" name="q6" value="1"> #include <>; с iostream.h внутри скобок</p>
+
+        <p><b> Какую функцию должны содержать все программы на С++?</b></p>
+        <p><input type="radio" name="q7" value="0" checked> program()</p>
+        <p><input type="radio" name="q7" value="0" > start()</p>
+        <p><input type="radio" name="q7" value="1"> main()</p>
+
+        <p><b>Какая из следующих записей - правильный комментарий в С++?</b></p>
+        <p><input type="radio" name="q8" value="0" checked>** Комментарий **</p>
+        <p><input type="radio" name="q8" value="0" > /* Комментарий */</p>
+        <p><input type="radio" name="q8" value="1"> */ Комментарии */</p>
+
+        <p><b>Укажите объектно-ориентированный язык программирования</b></p>
+        <p><input type="radio" name="q9" value="0" checked> Все варианты ответов</p>
+        <p><input type="radio" name="q9" value="0" > Eiffel</p>
+        <p><input type="radio" name="q9" value="1"> Java</p>
+        <p><input type="radio" name="q9" value="0"> С</p>
+
+        <p><b>Какой из перечисленных типов данных не является типом данных в С++?</b></p>
+        <p><input type="radio" name="q10" value="0" checked> int</p>
+        <p><input type="radio" name="q10" value="0" > double</p>
+        <p><input type="radio" name="q10" value="1"> real</p>
+
+        <p><input type="submit" value="Отправить"></p>
+    </form>
+</div>
+
+
+<!-- Модальные окна -->
+<!-- Окно с обучающей информацией по истории языка С++ -->
+<div class="modal fade bd-example-modal-lg" id="studyMaterialsHistoryOfC" tabindex="-1" role="dialog" aria-labelledby="studyMaterialsHistoryOfCTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="studyMaterialsHistoryOfCTitle">Как появился язык программирования С++</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>C++ компилируемый язык программирования общего назначения, сочетает свойства как высокоуровневых, так и низкоуровневых языков программирования. 
+                В сравнении с его предшественником, языком программирования Cи, наибольшее внимание уделено поддержке объектно-ориентированного и обобщённого программирования. 
+                Название «язык программирования C++» происходит от языка программирования C, в котором унарный оператор ++ обозначает инкремент переменной.
+            </p>
+            <p>
+                Язык программирования C++ широко используется для разработки программного обеспечения. А именно, создание разнообразных прикладных программ, 
+                разработка операционных систем, драйверов устройств, а также видео игр и многое другое. Существует несколько реализаций языка программирования 
+                C++ — как бесплатных, так и коммерческих. Их производят проекты: GNU, Microsoft и Embarcadero (Borland). 
+                Проект GNU  — проект разработки свободного программного обеспечения (СПО).
+            </p>
+            <p>
+                Язык программирования С++ был создан в начале 1980-х годов, его создатель сотрудник фирмы Bell Laboratories — Бьёрн Страуструп.
+            </p>
+            <p>
+                Он придумал ряд усовершенствований к языку программирования C, для собственных нужд. Т. е. изначально не планировалось создания языка программирования С++.
+                Ранние версии языка С++, известные под именем «Cи с классами», начали появляться с 1980 года. 
+                Язык C, будучи базовым языком системы UNIX, на которой работали компьютеры фирмы Bell, является быстрым, многофункциональным и переносимым. 
+                Страуструп добавил к нему возможность работы с классами и объектами, тем самым зародил предпосылки нового, основанного на синтаксисе С, языка программирования. 
+                Синтаксис C++ был основан на синтаксисе C, так как Бьёрн Страуструп стремился сохранить совместимость с языком C.
+            </p>
+            <p>
+                В 1983 году произошло переименование языка из «Cи с классами»в «язык программирования C++».
+            </p>
+            <p>
+                В него были добавлены новые возможности: виртуальные функции, перегрузка функций и операторов, ссылки, константы и многое другое. Его первый коммерческий выпуск состоялся в октябре 1985 года.
+            </p>
+            <p>
+                Язык программирования C++ является свободным, то есть никто не обладает на него правами.
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Окно с обучающей информацией по циклу for -->
+  <div class="modal fade bd-example-modal-lg" id="studyMaterialsLoops" tabindex="-1" role="dialog" aria-labelledby="studyMaterialsLoopsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="studyMaterialsLoopsTitle">Цикл for</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                <b>Что такое цикл?</b>
+                <br>
+                Цикл — многократное прохождение по одному и тому же коду программы. Циклы необходимы программисту для многократного выполнения одного и того же кода, 
+                пока истинно какое-то условие. Если условие всегда истинно, то такой цикл называется бесконечным, у такого цикла нет точки выхода.
+            </p>
+            <p>
+                <b>Цикл for</b>
+                <br>
+                Цикл for - итерационный цикл. Форма записи оператора цикла for:
+                for(/*выражение1*/; /*выражение2*/; /*выражение3*/) {
+                    /*один оператор или блок операторов*/;
+                }
+                Тело цикла будет выполняться до тех пор, пока условие будет истинно(т. е. true). 
+                Если в теле цикла for должен выполнится один оператор, тогда фигурные скобки можно опустить
+            </p>
+            <p>
+                <b>Цикл while</b>
+                <br>
+                Цикл while является циклом с предусловием. Он будет повторять одно и то же действие, пока условие продолжения цикла while остаётся истинным. 
+                Форма записи оператора цикла while:
+                while(/*условие продолжения цикла while*/) {
+                    /*блок операторов*/;
+                    /*управление условием*/;
+                }
+                Условие продолжения цикла должно быть истинно true, как только условие стало ложным, выполняется выход из цикла. 
+                Также как и в условных операторах выбора, фигурные скобочки могут опускаться в том случае, если тело цикла — это один оператор.
+            </p>
+            <p>
+                <b>Цикл do while</b>
+                <br>
+                Цикл do while является циклом с постусловием. Он отличается от цикла while тем, что в do while сначала выполняется тело цикла, 
+                а затем проверяется условие продолжения цикла. Таким образом, если условие do while заведомо ложное, то хотя бы один раз блок операторов 
+                в теле цикла do while выполнится.
+                Форма записи оператора цикла do while:
+                do {
+                    /*блок операторов*/;
+                }
+                while (/*условие продолжения цикла*/);
+            </p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <!-- Окно с обучающей информацией по оператору множественного выбора switch -->
+  <div class="modal fade bd-example-modal-lg" id="studyMaterialsSwitch" tabindex="-1" role="dialog" aria-labelledby="studyMaterialsSwitchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="studyMaterialsSwitchTitle">Оператор множественного выбора switch</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">   
+            <p> 
+                Форма записи оператора множественного выбора switch:
+                <br>
+                switch ( <переменная> ) {
+                    <br>
+                    case значение1:
+                        Выполнить если <переменная> == значение1
+                        <br>
+                        break;
+                    <br>
+                    case значение2:
+                      Выполнить если <переменная> == значение2
+                      <br>
+                      break;
+                    <br>  
+                    ...
+                    default:
+                      выполнить, если ни один вариант не подошел
+                      <br>
+                      break;
+                    }
+                <br>
+                На начальном этапе анализируется выражение или переменная. После чего осуществляется переход к той ветви программы, для которой значение переменной 
+                или выражения совпадает с указанным константным выражением. Далее выполняется оператор или группа операторов пока не встретится зарезервированное слово 
+                break или закрывающая фигурная скобочка. Если значение переменной или выражения не совпадает ни с одним константным выражением, то передается управление 
+                ветви программы содержащей зарезервированное слово default. После чего выполняется оператор или группа операторов данной ветви.
+            </p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+    </div>
+    </div>
+</div>

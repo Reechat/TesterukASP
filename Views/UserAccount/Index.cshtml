@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TesterukASP.history>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Личный кабинет</h2>
+<h3>Здравствуйте, @ViewBag.username</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            Тест
+        </th>
+        <th>
+            Пройти тест
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            Основы С++
+        </td>
+        <td>
+            <a href="~/Tests/Test1"><input type="button" value="Пройти тест" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Тест 2
+        </td>
+        <td>
+            <a href="/Tests/Test2.cshtml"><input type="button" value="Пройти тест" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Тест 3
+        </td>
+        <td>
+            <a href="~/Tests/Test3.cshtml"><input type="button" value="Пройти тест" /></a>
+        </td>
+    </tr>
+
+</table>
+
+
+
+
+
+<h3>Пройденные тесты</h3>
+<table class="table">
+    <tr>
+        <th>
+            Тест
+        </th>
+        <th>
+            Результат теста
+        </th>
+        <th>
+            Максимально возможный балл
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.test.name)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.test.number)
+            </td>
+        </tr>
+    }
+
+</table>
