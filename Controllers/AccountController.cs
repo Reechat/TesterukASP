@@ -12,7 +12,7 @@ using TesterukASP.Models;
 
 namespace TesterukASP.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -174,6 +174,7 @@ namespace TesterukASP.Controllers
 
         //
         // GET: /Account/ConfirmEmail
+        [Authorize]
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
