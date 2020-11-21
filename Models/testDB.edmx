@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище testDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище testDB" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -64,17 +64,16 @@
           <Property Name="LockoutEndDateUtc" Type="datetime" />
           <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
-          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="history">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="id_user" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="id_test" Type="int" Nullable="false" />
-          <Property Name="points" Type="int" Nullable="false" />
+          <Property Name="id_user" Type="nvarchar" MaxLength="128" />
+          <Property Name="id_test" Type="int" />
+          <Property Name="points" Type="int" />
         </EntityType>
         <EntityType Name="test">
           <Key>
@@ -140,20 +139,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_history_test">
-          <End Role="test" Type="Self.test" Multiplicity="1" />
-          <End Role="history" Type="Self.history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="test">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="history">
-              <PropertyRef Name="id_test" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_history_ToUser">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+        <Association Name="FK_history_employee">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
           <End Role="history" Type="Self.history" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AspNetUsers">
@@ -164,7 +151,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище testDBModelContainer">
+        <Association Name="FK_history_test">
+          <End Role="test" Type="Self.test" Multiplicity="0..1" />
+          <End Role="history" Type="Self.history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="test">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="history">
+              <PropertyRef Name="id_test" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище testDBContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -189,12 +188,12 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK_history_test" Association="Self.FK_history_test">
-            <End Role="test" EntitySet="test" />
+          <AssociationSet Name="FK_history_employee" Association="Self.FK_history_employee">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="history" EntitySet="history" />
           </AssociationSet>
-          <AssociationSet Name="FK_history_ToUser" Association="Self.FK_history_ToUser">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          <AssociationSet Name="FK_history_test" Association="Self.FK_history_test">
+            <End Role="test" EntitySet="test" />
             <End Role="history" EntitySet="history" />
           </AssociationSet>
         </EntityContainer>
@@ -202,7 +201,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="testDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="testDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -257,11 +256,10 @@
           <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
           <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
           <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
-          <NavigationProperty Name="history" Relationship="Self.FK_history_ToUser" FromRole="AspNetUsers" ToRole="history" />
+          <NavigationProperty Name="history" Relationship="Self.FK_history_employee" FromRole="AspNetUsers" ToRole="history" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
         </EntityType>
         <EntityType Name="history">
@@ -269,10 +267,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="id_user" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="id_test" Type="Int32" Nullable="false" />
-          <Property Name="points" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_history_ToUser" FromRole="history" ToRole="AspNetUsers" />
+          <Property Name="id_user" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_test" Type="Int32" />
+          <Property Name="points" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_history_employee" FromRole="history" ToRole="AspNetUsers" />
           <NavigationProperty Name="test" Relationship="Self.FK_history_test" FromRole="history" ToRole="test" />
         </EntityType>
         <EntityType Name="test">
@@ -312,8 +310,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_history_ToUser">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+        <Association Name="FK_history_employee">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
           <End Role="history" Type="Self.history" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AspNetUsers">
@@ -325,7 +323,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_history_test">
-          <End Role="test" Type="Self.test" Multiplicity="1" />
+          <End Role="test" Type="Self.test" Multiplicity="0..1" />
           <End Role="history" Type="Self.history" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="test">
@@ -356,7 +354,7 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
-          <AssociationSet Name="FK_history_ToUser" Association="Self.FK_history_ToUser">
+          <AssociationSet Name="FK_history_employee" Association="Self.FK_history_employee">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="history" EntitySet="history" />
           </AssociationSet>
@@ -374,9 +372,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище testDBModelContainer" CdmEntityContainer="testDBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище testDBContainer" CdmEntityContainer="testDBEntities">
           <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="testDBModel.C__MigrationHistory">
+            <EntityTypeMapping TypeName="testDB.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -386,7 +384,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="testDBModel.AspNetRoles">
+            <EntityTypeMapping TypeName="testDB.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -394,7 +392,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="testDBModel.AspNetUserClaims">
+            <EntityTypeMapping TypeName="testDB.AspNetUserClaims">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -404,7 +402,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="testDBModel.AspNetUserLogins">
+            <EntityTypeMapping TypeName="testDB.AspNetUserLogins">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -413,7 +411,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="testDBModel.AspNetUsers">
+            <EntityTypeMapping TypeName="testDB.AspNetUsers">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -427,12 +425,11 @@
                 <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
                 <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="history">
-            <EntityTypeMapping TypeName="testDBModel.history">
+            <EntityTypeMapping TypeName="testDB.history">
               <MappingFragment StoreEntitySet="history">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
@@ -442,7 +439,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="test">
-            <EntityTypeMapping TypeName="testDBModel.test">
+            <EntityTypeMapping TypeName="testDB.test">
               <MappingFragment StoreEntitySet="test">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -450,7 +447,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="testDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="testDB.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>

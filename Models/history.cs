@@ -11,13 +11,15 @@ namespace TesterukASP.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class history
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         public string id_user { get; set; }
-        public int id_test { get; set; }
-        public int points { get; set; }
+        public Nullable<int> id_test { get; set; }
+        public Nullable<int> points { get; set; }
     
         public virtual AspNetUsers AspNetUsers { get; set; }
         public virtual test test { get; set; }

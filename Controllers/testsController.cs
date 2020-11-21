@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,17 @@ namespace TesterukASP.Controllers
         // GET: Tests
         public ActionResult Test1()
         {
+            ViewBag.IdUser = User.Identity.GetUserId();
             return View();
         }
         public ActionResult Test2()
         {
+            ViewBag.IdUser = User.Identity.GetUserId();
             return View();
         }
         public ActionResult Test3()
         {
+            ViewBag.IdUser = User.Identity.GetUserId();
             return View();
         }
     }

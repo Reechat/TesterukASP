@@ -10,31 +10,20 @@ namespace TesterukASP.Controllers
     [Authorize]
     public class AddHistoryController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        private Models.testDBEntities db = new Models.testDBEntities();
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public void Post(Request1 value)
         {
+            int count = db.history.ToList<Models.history>().Count;
+            Models.history history = new Models.history {id = count, id_user = value.Id, id_test = value.test, points = value.count};
+            db.history.Add(history);
+            db.SaveChanges();
         }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+    }
+    public class Request1
+    {
+        public string Id { get; set; }
+        public int count { get; set; }
+        public int test { get; set; }
     }
 }

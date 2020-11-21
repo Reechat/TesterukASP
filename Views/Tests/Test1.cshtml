@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<TesterukASP.Models.history>
-@using Microsoft.AspNet.Identity
 
 <div id="left" class="position">
     <h2>Нужна помощь с тестами? Обратитесь к обучающим материалам.</h2>
@@ -10,7 +9,7 @@
     <br>
     <br>
     <br>
-    <form onSubmit="countScore(@User.Identity.GetUserId())">
+    <form onSubmit="countScore('@ViewBag.IdUser',1)" action="~/UserAccount" method="post"><!--Циферку тут надо менять на номер теста-->
         <h3>Основы С++, история возникновения, циклы, switch</h3>
         <br>
         <p><b>Выберите цикл с постусловием</b></p>
