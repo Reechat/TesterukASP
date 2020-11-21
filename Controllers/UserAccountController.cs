@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TesterukASP;
 
 namespace TesterukASP.Controllers
 {
@@ -14,15 +13,16 @@ namespace TesterukASP.Controllers
     public class UserAccountController : Controller
     {
         //[Authorize(Roles = "User")]
-        private testerukdbEntities1 db = new testerukdbEntities1();
+        //private testerukdbEntities1 db = new testerukdbEntities1();
+        private Models.testDBEntities db = new Models.testDBEntities();
 
         // GET: histories
         public ActionResult Index()
         {
-            var history = db.history.Include(h => h.employee).Include(h => h.test);
+            var history = db.history.Include(h => h.AspNetUsers).Include(h => h.test);
             int count = 0;
-            List<history> list = new List<history>();
-            foreach (history el in history.ToList())
+            List<Models.history> list = new List<Models.history>();
+            foreach (Models.history el in history.ToList())
             {
                 if (count != 0)
                 {
