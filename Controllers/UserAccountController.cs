@@ -38,7 +38,6 @@ namespace TesterukASP.Controllers
                 }
                 count++;
             }
-            ViewBag.username = "Нестерук Валерий Филипович";
             return View(list);
         }
 

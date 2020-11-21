@@ -3,9 +3,9 @@
 @{
     ViewBag.Title = "View";
 }
-
+@using Microsoft.AspNet.Identity
 <h2>Личный кабинет</h2>
-<h3>Здравствуйте, @ViewBag.username</h3>
+<h3>Здравствуйте, @User.Identity.GetUserName()</h3>
 
 <table class="table">
     <tr>
