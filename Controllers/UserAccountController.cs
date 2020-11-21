@@ -13,7 +13,7 @@ namespace TesterukASP.Controllers
 
     public class UserAccountController : Controller
     {
-        //[Authorize(Roles = "User")]
+        
         private testerukdbEntities1 db = new testerukdbEntities1();
 
         // GET: histories
