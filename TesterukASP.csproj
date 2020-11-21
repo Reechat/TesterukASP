@@ -245,38 +245,52 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddHistoryController.cs" />
     <Compile Include="Controllers\GetEmployeeIdController.cs" />
-    <Compile Include="Controllers\historiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\UserAccountController.cs" />
-    <Compile Include="DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="employee.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="history.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\history.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\test.cs">
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\testDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\testDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\testDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -284,12 +298,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="test.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-TesterukASP-20201110095519.mdf" />
@@ -303,33 +311,33 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Models\testDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>testDB.edmx</DependentUpon>
+      <LastGenOutput>testDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\testDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>testDB.edmx</DependentUpon>
+      <LastGenOutput>testDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\script.js" />
-    <Content Include="DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB.edmx</DependentUpon>
-      <LastGenOutput>DB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB.edmx</DependentUpon>
-      <LastGenOutput>DB.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <EntityDeploy Include="DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DB.edmx.diagram">
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\testDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>testDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\testDB.edmx.diagram">
+      <DependentUpon>testDB.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
