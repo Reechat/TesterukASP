@@ -243,6 +243,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddHistoryController.cs" />
+    <Compile Include="Controllers\GetEmployeeIdController.cs" />
     <Compile Include="Controllers\historiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -290,6 +292,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-TesterukASP-20201110095519.mdf" />
+    <Content Include="App_Data\aspnet-TesterukASP-20201110095519_log.ldf">
+      <DependentUpon>aspnet-TesterukASP-20201110095519.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\db.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -480,9 +487,7 @@
     <Content Include="Views\histories\Index.cshtml" />
     <Content Include="Views\UserAccount\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
