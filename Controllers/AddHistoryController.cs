@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace TesterukASP.Controllers
 {
+    [Authorize]
     public class AddHistoryController : ApiController
     {
         // GET api/<controller>
