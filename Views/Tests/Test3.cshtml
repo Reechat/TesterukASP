@@ -1,10 +1,68 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<div id="left" class="position">
+    <form onSubmit="countScore()">
+        <h4>Тестирование в С++: строки, ссылки, указатели, массивы.</h4>
 
-</body>
-</html>
+        <p><b>Какая из следующих функций считывает 100 символов из входного потока в строку x?</b></p>
+        <p><input type="radio" name="q1" value="0" checked> readline(x, 100, 'n');</p>
+        <p><input type="radio" name="q1" value="0"> cin.getline(x, 100, 'n');</p>
+        <p><input type="radio" name="q1" value="1"> cin.getline(100, x, 'n');</p>
+        <p><input type="radio" name="q1" value="0"> read(x);</p>
+
+        <p><b>Укажите зарезервированное ключевое слово для динамического выделения памяти!</b></p>
+        <p><input type="radio" name="q2" value="0" checked> create</p>
+        <p><input type="radio" name="q2" value="1"> malloc</p>
+        <p><input type="radio" name="q2" value="0"> new</p>
+        <p><input type="radio" name="q2" value="0"> value</p>
+
+        <p><b>Какой стандартный код используется для Символьных данных типа char в С++?</b></p>
+        <p><input type="radio" name="q3" value="0" checked> Код ASCI</p>
+        <p><input type="radio" name="q3" value="1"> Код UTF-8</p>
+        <p><input type="radio" name="q3" value="0"> Код ASCII</p>
+        <p><input type="radio" name="q3" value="0"> Код cp-1251</p>
+
+
+        <p><b>Укажите строку, которая возвращает адрес первого элемента в массиве arr?</b></p>
+        <p><input type="radio" name="q4" value="0" checked> arr[0];</p>
+        <p><input type="radio" name="q4" value="0"> & arr;</p>
+        <p><input type="radio" name="q4" value="1"> arr;</p>
+        <p><input type="radio" name="q4" value="0"> arr[1];</p>
+
+        <p><b>В какой из следующих записей используется операция разименования?</b></p>
+        <p><input type="radio" name="q5" value="0" checked> a ;</p>
+        <p><input type="radio" name="q5" value="0"> *a;</p>
+        <p><input type="radio" name="q5" value="1"> address(a);</p>
+        <p><input type="radio" name="q5" value="0"> & a;</p>
+
+        <p><b>В каком из вариантов ответов объявлен двумерный массив?</b></p>
+        <p><input type="radio" name="q6" value="0" checked> int anarray[20][20];</p>
+        <p><input type="radio" name="q6" value="0"> int array[20, 20];</p>
+        <p><input type="radio" name="q6" value="1"> char array[20];</p>
+        <p><input type="radio" name="q6" value="1"> array anarray[20][20];</p>
+
+        <p><b>Словосочетание "Hello world!" может быть сохранено в символьном массиве размером n элементов. Укажите чему равно n?</b></p>
+        <p><input type="radio" name="q7" value="0" checked> 12</p>
+        <p><input type="radio" name="q7" value="0"> 10</p>
+        <p><input type="radio" name="q7" value="1"> 11</p>
+        <p><input type="radio" name="q7" value="1"> 13</p>
+
+        <p><b>Какой заголовочный файл необходимо подключить, чтобы вызвать функцию isalpha()?</b></p>
+        <p><input type="radio" name="q8" value="0" checked> cstring</p>
+        <p><input type="radio" name="q8" value="0"> conio.h</p>
+        <p><input type="radio" name="q8" value="0"> cctype</p>
+        <p><input type="radio" name="q8" value="1"> ifstream.h</p>
+
+        <p><b>Что такое ссылка?</b></p>
+        <p><input type="radio" name="q9" value="0" checked> оператор</p>
+        <p><input type="radio" name="q9" value="0"> нет правильного ответа</p>
+        <p><input type="radio" name="q9" value="0"> используется для переименования объектов</p>
+        <p><input type="radio" name="q9" value="1"> ссылка является псевдонимом для объекта</p>
+
+        <p><b>Какой заголовочный файл следует подключить, чтобы можно было пользоваться приведением типов данных?</b></p>
+        <p><input type="radio" name="q10" value="0" checked> cctype</p>
+        <p><input type="radio" name="q10" value="0"> Никакого/p>
+        <p><input type="radio" name="q10" value="1"> cmath</p>
+
+        <p><input type="submit" value="Отправить"></p>
+    </form>
+
+</div>

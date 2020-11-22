@@ -11,60 +11,72 @@
     <br>
     <form onSubmit="countScore('@ViewBag.IdUser',2)" action="~/UserAccount" method="post">
         <!--Циферку тут надо менять на номер теста-->
-        <h3>Основы С++, история возникновения, циклы, switch</h3>
-        <br>
-        <p><b>Выберите цикл с постусловием</b></p>
-        <p><input type="radio" name="q1" value="0" checked> for</p>
-        <p><input type="radio" name="q1" value="0"> while</p>
-        <p><input type="radio" name="q1" value="1"> do while</p>
+        <h3>Тестирование в С++: арифметические и логические операции, преобразование типов данных, оператор выбора.</h3>
+        <p><b>Какое ключевое слово указывает, что целая переменная не может принимать отрицательные значения?</b></p>
+        <p><input type="radio" name="q1" value="0" checked> нет такого зарезервированного слова</p>
+        <p><input type="radio" name="q1" value="0"> другое</p>
+        <p><input type="radio" name="q1" value="1"> positive</p>
+        <p><input type="radio" name="q1" value="0"> unsigned</p>
+        <p><input type="radio" name="q1" value="0"> long</p>
 
-        <p><b>Какой служебный знак ставится после оператора case?</b></p>
-        <p><input type="radio" name="q2" value="0" checked> ;</p>
-        <p><input type="radio" name="q2" value="1"> :</p>
-        <p><input type="radio" name="q2" value="0"> .</p>
-        <p><input type="radio" name="q2" value="0"> -</p>
+        <p><b>Какие преобразования типов данных не возможны без потери данных?</b></p>
+        <p><input type="radio" name="q2" value="0" checked> все перечисленные преобразования не возможны</p>
+        <p><input type="radio" name="q2" value="1"> char to float</p>
+        <p><input type="radio" name="q2" value="0"> float to int</p>
+        <p><input type="radio" name="q2" value="0"> int to float</p>
 
-        <p><b>До каких пор будут выполняться операторы в теле цикла while (x < 100)?</b></p>
-        <p><input type="radio" name="q3" value="0" checked> Пока х меньше или равен стам</p>
-        <p><input type="radio" name="q3" value="1"> Пока х равен стам</p>
-        <p><input type="radio" name="q3" value="0"> Пока х больше ста</p>
-        <p><input type="radio" name="q3" value="0"> Пока х строго меньше ста</p>
+        <p><b>Укажите операцию, приоритет выполнения которой ниже остальных.</b></p>
+        <p><input type="radio" name="q3" value="0" checked> >></p>
+        <p><input type="radio" name="q3" value="1"> <<</p>
+        <p><input type="radio" name="q3" value="0"> ^</p>
+        <p><input type="radio" name="q3" value="0"> ?:</p>
+        <p><input type="radio" name="q3" value="0"> |</p>
+        <p><input type="radio" name="q3" value="0"> ||</p>
+        <p><input type="radio" name="q3" value="0"> &</p>
+        <p><input type="radio" name="q3" value="0"> &&</p>
 
-        <p><b>Тело любого цикла выполняется до тех пор, пока его условие...</b></p>
-        <p><input type="radio" name="q4" value="0" checked> Истинно</p>
-        <p><input type="radio" name="q4" value="0"> Ложно</p>
-        <p><input type="radio" name="q4" value="1"> У цикла нет условия</p>
 
-        <p><b>Какой из следующих операторов - оператор сравнения двух переменных?</b></p>
-        <p><input type="radio" name="q5" value="0" checked> :=</p>
-        <p><input type="radio" name="q5" value="0"> ==</p>
-        <p><input type="radio" name="q5" value="1"> =</p>
+        <p><b>Укажите неправильно записанную операцию отношения.</b></p>
+        <p><input type="radio" name="q4" value="0" checked> все операторы записаны правильно</p>
+        <p><input type="radio" name="q4" value="0"> <=</p>
+        <p><input type="radio" name="q4" value="1"> >=</p>
+        <p><input type="radio" name="q4" value="0"> =!</p>
 
-        <p><b>Чтобы подключить заголовочный файл в программу на С++, например файл iostream, необходимо написать:</b></p>
-        <p><input type="radio" name="q6" value="0" checked> include #iostream,h;</p>
-        <p><input type="radio" name="q6" value="0"> include (iostreamh)т</p>
-        <p><input type="radio" name="q6" value="1"> #include <>; с iostream.h внутри скобок</p>
+        <p><b>Результат выполнения следующего фрагмента кода: cout << 22 / 5 * 3;</b></p>
+        <p><input type="radio" name="q5" value="0" checked> 12</p>
+        <p><input type="radio" name="q5" value="0"> 1</p>
+        <p><input type="radio" name="q5" value="1"> 13.2</p>
+        <p><input type="radio" name="q5" value="0"> 1.47</p>
+        <p><input type="radio" name="q5" value="0"> другое</p>
 
-        <p><b> Какую функцию должны содержать все программы на С++?</b></p>
-        <p><input type="radio" name="q7" value="0" checked> program()</p>
-        <p><input type="radio" name="q7" value="0"> start()</p>
-        <p><input type="radio" name="q7" value="1"> main()</p>
+        <p><b>Чему равен результат выполнения следующего выражения: 1000 / 100 % 7 * 2</b></p>
+        <p><input type="radio" name="q6" value="0" checked> 250</p>
+        <p><input type="radio" name="q6" value="0"> 6</p>
+        <p><input type="radio" name="q6" value="1"> 10</p>
+        <p><input type="radio" name="q6" value="1"> 10000</p>
 
-        <p><b>Какая из следующих записей - правильный комментарий в С++?</b></p>
-        <p><input type="radio" name="q8" value="0" checked>** Комментарий **</p>
-        <p><input type="radio" name="q8" value="0"> /* Комментарий */</p>
-        <p><input type="radio" name="q8" value="1"> */ Комментарии */</p>
+        <p><b>Почему приведение типов данных может быть не безопасно.</b></p>
+        <p><input type="radio" name="q7" value="0" checked> Вы можете навсегда изменить значение переменной.</p>
+        <p><input type="radio" name="q7" value="0"> Вы можете временно потерять часть данных - таких, как отсечение десятичной части чисел с плавающей точкой.</p>
+        <p><input type="radio" name="q7" value="1"> Некоторые преобразования не определены компилятором, такие как - преобразование символа в целое.</p>
+        <p><input type="radio" name="q7" value="1"> нет никаких опасностей.</p>
 
-        <p><b>Укажите объектно-ориентированный язык программирования</b></p>
-        <p><input type="radio" name="q9" value="0" checked> Все варианты ответов</p>
-        <p><input type="radio" name="q9" value="0"> Eiffel</p>
-        <p><input type="radio" name="q9" value="1"> Java</p>
-        <p><input type="radio" name="q9" value="0"> С</p>
+        <p><b>Какой из ниже перечисленных вариантов ответа, показывает правильно записанный оператор выбора if ?</b></p>
+        <p><input type="radio" name="q8" value="0" checked> условное выражение if</p>
+        <p><input type="radio" name="q8" value="0"> if { условное выражение}</p>
+        <p><input type="radio" name="q8" value="0"> if условное выражение</p>
+        <p><input type="radio" name="q8" value="1"> if ( условное выражение )</p>
 
-        <p><b>Какой из перечисленных типов данных не является типом данных в С++?</b></p>
-        <p><input type="radio" name="q10" value="0" checked> int</p>
-        <p><input type="radio" name="q10" value="0"> double</p>
-        <p><input type="radio" name="q10" value="1"> real</p>
+        <p><b>В каком случае лучше всего использовать приведение типов данных?</b></p>
+        <p><input type="radio" name="q9" value="0" checked> чтобы изменить тип возвращаемого значения функции</p>
+        <p><input type="radio" name="q9" value="0"> при делении двух целых чисел, для того, чтобы вернуть результат с плавающей точкой</p>
+        <p><input type="radio" name="q9" value="0"> во всех выше указанных случаях</p>
+        <p><input type="radio" name="q9" value="1"> чтобы разрешить программе использовать только целые числа</p>
+
+        <p><b>Какой заголовочный файл следует подключить, чтобы можно было пользоваться приведением типов данных?</b></p>
+        <p><input type="radio" name="q10" value="0" checked> cctype</p>
+        <p><input type="radio" name="q10" value="0"> Никакого/p>
+        <p><input type="radio" name="q10" value="1"> cmath</p>
 
         <p><input type="submit" value="Отправить"></p>
     </form>
